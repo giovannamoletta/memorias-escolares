@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giovanna • Memórias e Redações do Ensino Médio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="hero-small">Formanda do Ensino Médio</p>
+    <h1>Meu caderninho de memórias</h1>
+    <p class="hero-sub">Do Jardim de Infância ao 3º ano, e as redações que escrevi pelo caminho.</p>
+    <nav>
+      <a href="#memorias">Memórias escolares</a>
+      <a href="#redacoes">Portfólio de redações</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="memorias">
+      <h2>Memórias escolares</h2>
+      <p class="intro">Minha trajetória escolar: do Jardim de Infância ao 3º ano do Ensino Médio.</p>
+
+      <ol class="linha-tempo">
+        <li>
+          <h3>Jardim de Infância / Pré-escola</h3>
+          <p>Minha trajetória escolar começou com algumas dificuldades. No Jardim de Infância, tive uma experiência desagradável com uma coleguinha que me mordia todos os dias. Isso acabou fazendo com que eu criasse certa resistência em ir à escola, pois não me sentia confortável com aquela situação. Foi um período que marcou o início da minha vida escolar de uma maneira não tão positiva.</p>
+        </li>
+        <li>
+          <h3>Ensino Fundamental I (1º ao 5º ano)</h3>
+          <p>No início do Ensino Fundamental, minha relação com a escola melhorou bastante. Eu gostava de estudar, era esforçada e costumava tirar boas notas, embora não fosse necessariamente uma aluna de grande destaque na turma. Tinha interesse em aprender e me dedicava às atividades escolares. Inclusive, recebi o prêmio de melhor redação do PROERD, uma conquista que marcou positivamente essa fase da minha vida escolar.</p>
+          <figure>
+            <img src="assets/proerd.jpg" alt="Eu segurando o certificado e o leão de pelúcia do prêmio de melhor redação do PROERD" loading="lazy">
+            <figcaption>O dia do prêmio de melhor redação do PROERD.</figcaption>
+          </figure>
+        </li>
+        <li>
+          <h3>Ensino Fundamental II (6º ao 9º ano)</h3>
+          <p>Durante o Ensino Fundamental II, minha vida escolar passou por uma grande mudança devido à pandemia. O ensino remoto e o afastamento da rotina escolar afetaram bastante minha aprendizagem e fizeram com que meu desempenho caísse muito. Além disso, nesse período, mudei para uma escola militar, com a qual não me identifiquei. O que mais me incomodava eram as regras rígidas e a disciplina exigida pela instituição. Também tive dificuldades com alguns professores. Tudo isso contribuiu para que eu perdesse ainda mais o interesse pelos estudos e deixasse de ter a mesma dedicação de antes.</p>
+          <figure>
+            <img src="assets/uniforme.jpg" alt="Selfie no espelho com o uniforme de educação física da escola militar" loading="lazy">
+            <figcaption>Com o uniforme da escola militar.</figcaption>
+          </figure>
+        </li>
+        <li>
+          <h3>Ensino Médio (1º ao 3º ano)</h3>
+          <p>Ao entrar no Ensino Médio, mudei novamente de escola, dessa vez para uma instituição mais próxima da minha casa. Essa mudança facilitou bastante minha rotina, principalmente em relação ao deslocamento, e também encontrei um ambiente com o qual consegui me adaptar melhor. Acredito que a escola atual possui um nível de exigência um pouco menor em comparação à anterior, o que tornou minha experiência acadêmica mais tranquila.</p>
+          <p>Apesar dessa mudança positiva, não consegui recuperar completamente a motivação que tinha no início da minha vida escolar. Ainda tenho dificuldades em manter o mesmo interesse pelos estudos, mas procuro me esforçar e cumprir minhas responsabilidades.</p>
+          <p>Por outro lado, desde o início do Ensino Médio, algumas disciplinas começaram a chamar minha atenção de maneira especial, principalmente Educação Física. Uma matéria que despertou meu interesse e me fez refletir sobre minhas preferências e possibilidades profissionais. Atualmente, Nutrição é o curso que pretendo seguir no ensino superior, sendo uma das minhas principais escolhas para o futuro.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="redacoes">
+      <h2>Portfólio de redações</h2>
+      <p class="intro">15 textos escritos nas aulas de Língua Portuguesa e Redação. Toque em um cartão para ler.</p>
+      <div id="cards" class="cards"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <button class="fechar" id="fechar" aria-label="Fechar redação">×</button>
+      <p class="modal-num" id="modal-num"></p>
+      <h3 id="modal-titulo"></h3>
+      <div id="modal-texto" class="modal-texto"></div>
+      <div class="modal-nav">
+        <button id="anterior">Anterior</button>
+        <button id="proxima">Próxima</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>Feito com carinho no fim do Ensino Médio.</footer>
+
+  <script src="js/redacoes.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
