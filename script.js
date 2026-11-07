@@ -1,61 +1,196 @@
-// Temas das 15 redações
-const TEMAS = [
-  "Mudanças no ciclo da água", "Canetas emagrecedoras e pressão estética", "Inteligência artificial e fake news",
-  "Agronegócio e sustentabilidade", "Apostas online entre jovens", "Exclusão digital no Brasil",
-  "Cultura fitness e padrão de beleza", "Cidadania indígena", "Algoritmos e consumo",
-  "Preservação dos monumentos históricos", "Exploração espacial e responsabilidade social",
-  "Fauna brasileira ameaçada", "Migração e xenofobia", "Eventos climáticos extremos", "Lixo eletrônico"
+// Banco de dados de redações extraídas do documento oficial
+const redações = [
+    {
+        numero: 1,
+        titulo: "Mudanças no Ciclo da Água e Consequências Industriais",
+        conteudo: [
+            "Segundo o renomado cientista Carlos Nobre, a Terra pode se tornar inabitável até 2100 se não reduzirmos rapidamente as emissões de carbono. Ainda que iniciativas sejam tomadas para tentar impedir os impactos sociais e econômicos das mudanças no ciclo da água. Nesse cenário, observa-se que tal problemática persiste, no entanto, muitas indústrias ainda negligenciam o uso correto da água e a falta de fiscalização do poder público tem como consequência na manutenção do ciclo hidrológico.",
+            "Diante desse cenário, vale ressaltar o descaso de muitas fábricas com o uso da água. Diversas empresas focam no ganho, omitindo a nativa, descartando lixo de forma errada e utilizando a água sem responsabilidade e o devido cuidado. Sendo assim, causando poluição em rios, lagos e águas subterrâneas, afetando o ambiente e o acesso igualitário para toda a população.",
+            "Além disso, é necessário considerar que a falta de cuidado do governo contribui para essa situação. A ausência de ações realizadas por órgãos executivos que fiscalizam faz com que práticas ruins para o ambiente aconteçam sem a devida punição. A carência de iniciativas para acompanhar e conscientizar dificulta a criação de ações sustentáveis, agravando ainda mais os problemas sociais e econômicos ligados às mudanças no ciclo da água.",
+            "Tendo em vista os aspectos observados, é muito importante tomar medidas que mudem essas circunstâncias. Para isso, o governo federal, junto com órgãos do meio ambiente, precisa fiscalizar indústrias, criando leis mais duras. Enquanto as fábricas podem ser incentivadas a usar práticas sustentáveis, como reutilizar a água e tratar corretamente. Por conseguinte, é fundamental fazer campanhas para conscientizar as pessoas sobre o uso correto da água. Assim será possível mitigar os efeitos das mudanças no ciclo hidrológico e garantir que esse recurso tão importante seja preservado para o futuro."
+        ]
+    },
+    {
+        numero: 2,
+        titulo: "Pressão Estética e Uso Indiscriminado de Canetas Emagrecedoras",
+        conteudo: [
+            "De acordo com o filósofo Michel Foucault, a pressão estética pode ser entendida como uma forma de biopoder, em que a sociedade impõe padrões sobre os corpos. Ainda assim, alguns dilemas precisam ser resolvidos, como os riscos e implicações do uso indiscriminado de canetas emagrecedoras. Sendo assim, é perceptível como a manipulação irregular das canetas emagrecedoras contribui para graves riscos à saúde.",
+            "Além disso, é importante destacar que o uso dessas substâncias sem orientação médica adequada pode desencadear efeitos colaterais severos, como alterações hormonais, problemas gastrointestinais e até complicações mais graves a longo prazo. Ainda que sejam divulgadas como soluções rápidas e eficazes, as chamadas canetas emagrecedoras não atuam de forma isolada no organismo, o que exige acompanhamento profissional e responsabilidade em sua utilização.",
+            "Além disso, a influência das redes sociais e da indústria estética intensifica a busca por padrões corporais muitas vezes inalcançáveis, reforçando a lógica de controle dos corpos apontada por Foucault. Nesse contexto, indivíduos passam a recorrer a métodos perigosos em nome da aceitação social, levando em consideração como o biopoder se manifesta de maneira sutil, porém profundamente impactante, na vida cotidiana.",
+            "Portanto, é fundamental promover a conscientização acerca dos riscos associados ao uso indiscriminado dessas substâncias, bem como incentivar uma visão mais crítica em relação aos padrões estéticos impostos. Somente por meio da informação, do acompanhamento médico e da valorização da diversidade corporal será possível diminuir os danos à saúde e acabar com práticas que colocam em risco o bem-estar da população."
+        ]
+    },
+    {
+        numero: 3,
+        titulo: "Inteligência Artificial: Autonomia e Desinformação",
+        conteudo: [
+            "Com o avanço da tecnologia, a inteligência artificial passou a fazer parte do cotidiano. Nesse cenário, o matemático Alan Turing já discutia, no século passado, a possibilidade de máquinas imitarem o pensamento humano. Hoje, essa tecnologia facilita muitas tarefas, mas também traz problemas. Entre eles, destacam-se o uso excessivo e a disseminação de fake news, o que exige atenção.",
+            "Em primeiro lugar, o uso exagerado da inteligência artificial pode gerar dependência. Embora os estudos de Turing tenham possibilitado grandes avanços, o uso constante dessas ferramentas pode reduzir a autonomia das pessoas e enfraquecer o pensamento crítico. Assim, a tecnologia, que deveria auxiliar, acaba sendo usada de forma prejudicial.",
+            "Além disso, outro problema importante é a circulação de notícias falsas. Com o avanço da IA, surgiram conteúdos cada vez mais difíceis de identificar como falsos, como os deepfakes. Isso facilita a desinformação e pode influenciar negativamente a sociedade.",
+            "Portanto, apesar dos benefícios da inteligência artificial, seu uso excessivo e a propagação de fake news são desafios atuais. Para isso, o Ministério da Educação deve incentivar o uso consciente da tecnologia nas escolas. Além disso, o governo, junto às empresas digitais, precisa criar mecanismos para identificar e conter informações falsas, garantindo mais segurança no ambiente virtual."
+        ]
+    },
+    {
+        numero: 4,
+        titulo: "Agronegócio e Sustentabilidade Ambiental",
+        conteudo: [
+            "O setor do agronegócio é um dos principais motores econômicos do Brasil, garantindo o abastecimento interno e a exportação. No entanto, o grande desafio da atualidade é conciliar a alta produtividade com a preservação ambiental. Para alcançar um futuro sustentável, é preciso que o país encontre um equilíbrio entre a produção agrícola e a proteção dos recursos naturais, superando práticas que ameaçam o meio ambiente.",
+            "Em primeiro lugar, cabe destacar que a imagem do agro muitas vezes é associada ao desmatamento e ao uso excessivo de agrotóxicos. Embora a tecnologia tenha avançado, permitindo colheitas em áreas menores, ainda existem produtores que utilizam métodos arcaicos de expansão de terra. Isso gera impactos profundos, como a perda da biodiversidade e as mudanças climáticas que afetam a própria agricultura. Portanto, produzir sem responsabilidade ecológica é um risco para a segurança alimentar do futuro.",
+            "Contudo, o conceito de sustentabilidade não deve ser visto como um inimigo do desenvolvimento financeiro. Práticas como o plantio direto mostram que é possível lucrar e preservar ao mesmo tempo. O problema central é que o acesso a essas tecnologias e o incentivo para uma transição ainda não chegam de forma igualitária a todos os agricultores, principalmente os pequenos.",
+            "Portanto, medidas são necessárias para resolver esse problema. O Ministério da Agricultura deve criar bônus fiscais exclusivos para produtores que adotarem práticas sustentáveis, como o reflorestamento de áreas degradadas. Além disso, órgãos de fiscalização devem monitorar as propriedades para punir crimes ambientais. Com essas ações, o Brasil poderá consolidar um agro forte e, verdadeiramente, garantir um futuro sustentável para as próximas gerações."
+        ]
+    },
+    {
+        numero: 5,
+        titulo: "Impactos Socioeconômicos das Plataformas de Apostas Online",
+        conteudo: [
+            "No filme 'Amor e Outras Drogas', mostra-se como o vício em algo aparentemente inofensivo pode desestruturar a vida de um indivíduo. Fora das telas, a realidade dos jovens brasileiros com as plataformas de apostas online, conhecidas como 'bets', reflete esse cenário. Vistas como uma forma de diversão e entretenimento, essas ferramentas têm causado sérios efeitos socioeconômicos na juventude do país. Isso ocorre devido à forte influência de influenciadores digitais na internet.",
+            "É importante pontuar que a ausência de uma base sobre finanças contribui para o problema. Na maioria das escolas do Brasil, os estudantes não aprendem a gerir o próprio dinheiro. Dessa forma, ao entrarem em contato com as 'bets', muitos jovens acreditam na ilusão do ganho fácil e rápido, investindo o que não têm. Como consequência, o que era para ser um momento de lazer acaba afetando o orçamento de muitas famílias que precisam arcar com os prejuízos.",
+            "Além disso, a publicidade nas redes sociais agrava essa situação. Grandes influenciadores digitais, que possuem milhões de seguidores jovens, fazem propagandas mostrando lucros falsos e vidas luxuosas que seriam alcançadas por meio das apostas. O jovem, que busca independência financeira, é facilmente manipulado por esse marketing. Assim, o endividamento precoce surge, gerando também problemas psicológicos.",
+            "Portanto, medidas são necessárias para combater os impactos negativos das apostas online na vida dos jovens. Para isso, o Ministério da Educação deve implementar aulas de educação financeira na grade curricular das escolas públicas e privadas. O objetivo é conscientizar os estudantes sobre os riscos do dinheiro fácil e a importância do planejamento econômico. Dessa maneira, será possível transformar a relação da juventude com as 'bets', priorizando o futuro financeiro e social dessa geração."
+        ]
+    },
+    {
+        numero: 6,
+        titulo: "Exclusão Digital e Desigualdades Socioeconômicas no Brasil",
+        conteudo: [
+            "Segundo o sociólogo francês Pierre Bourdieu, quem não possui acesso à internet e às tecnologias fica em desvantagem educacional e profissional. Nesse contexto, a exclusão digital no Brasil agrava desigualdades já existentes, uma vez que apenas uma parte da população tem alcance dos meios necessários. Essa disparidade não limita apenas o desenvolvimento individual, mas também atrasa o progresso socioeconômico do país, sendo motivada pela falta de infraestrutura em regiões periféricas e pela ausência de uma alfabetização digital voltada para o mercado de trabalho.",
+            "O problema da infraestrutura diante desse cenário: a falta de investimentos em estrutura tecnológica é um dos principais obstáculos para a democratização do acesso à rede. Em muitas periferias, comunidades e, principalmente, em áreas rurais do Brasil, a conexão de internet é ruim ou inexistente. Essa realidade cria um obstáculo onde os cidadãos dessas localidades são excluídos de serviços básicos que hoje são digitais, como atendimento bancário, consultas médicas e até mesmo educação.",
+            "Além da questão estrutural, a falta de uma alfabetização digital voltada para os requisitos do mercado atual surge como outro desafio. O mercado de trabalho exige competências que vão desde operações básicas até a capacidade de filtrar informações de maneira crítica. Sem um ensino público que prepare os jovens para essas demandas, a tecnologia deixa de ser um instrumento de crescimento social, deixando os menos favorecidos em desvantagem em processos seletivos.",
+            "Portanto, é necessário romper as barreiras da exclusão digital no Brasil. Para isso, o Ministério das Comunicações, em parceria com governos estaduais, deve ampliar a infraestrutura e instalar pontos de internet gratuita de alta qualidade em praças, escolas de regiões periféricas e rurais. Com essas ações, o país poderá transformar a tecnologia em uma ponte para o progresso socioeconômico, garantindo o desenvolvimento individual de todos os cidadãos."
+        ]
+    },
+    {
+        numero: 7,
+        titulo: "Cultura Fitness, Padrões Estéticos e Saúde Mental",
+        conteudo: [
+            "No filme Barbie, dirigido por Greta Gerwig, a protagonista vive em um universo que visa exclusivamente a busca pela estética inatingível, desprezando o bem-estar. Porém, ao entrar em contato com o mundo real, a personagem percebe que os padrões expostos por uma sociedade podem acarretar insegurança e insatisfação. Fora da ficção, essa problemática se manifesta no mundo atual, geralmente pela busca incansável da beleza irreal. Neste cenário, a pressão social e a influência das redes digitais contribuem para agravar a situação.",
+            "Diante do contexto apresentado, a pressão social pode fazer com que muitas pessoas pratiquem atividades físicas não por saúde, mas para alcançar um padrão de beleza considerado normal. Isso acontece pois a sociedade valoriza cada vez mais corpos definidos e magros, fazendo com que indivíduos se sintam insatisfeitos com sua própria aparência. Assim como Barbie percebe que não consegue corresponder às expectativas impostas a ela, muitas pessoas também enfrentam cobranças para ter um corpo considerado perfeito.",
+            "Além disso, as redes sociais contribuem para a busca por uma estética inalcançável. A exposição de corpos considerados perfeitos pode gerar comparações e sentimentos ruins, principalmente quando as pessoas não percebem que muitas imagens possuem edições diferentes da realidade. Dessa forma, a prática de exercícios, que deveria estar relacionada ao bem-estar, se transforma em uma preocupação excessiva com a aparência.",
+            "Portanto, é necessário buscar um equilíbrio entre a cultura fitness e a saúde. Para isso, as redes sociais devem incentivar conteúdos que valorizem corpos reais e uma boa relação com atividade física. Além disso, escolas e outros meios podem promover campanhas sobre os benefícios dos exercícios para a saúde, não apenas pela estética. Assim, será possível diminuir a pressão por um padrão de beleza e fazer com que a busca pelo bem-estar seja priorizada."
+        ]
+    },
+    {
+        numero: 8,
+        titulo: "Garantia da Cidadania Indígena e Direitos Territoriais",
+        conteudo: [
+            "Os povos indígenas fazem parte da história do Brasil muito antes da chegada dos portugueses. Mesmo assim, ao longo dos anos, essas populações sofreram com a perda de seus territórios, violência e a tentativa de apagar suas culturas e tradições. Atualmente, a Constituição Federal de 1988 reconhece diversos direitos dos povos originários, porém, na prática, muitos deles ainda não são respeitados. Dessa forma, a garantia dos direitos constitucionais e o combate ao preconceito são fundamentais para que a cidadania indígena seja realmente exercida no país.",
+            "Em primeiro lugar, a questão territorial é um dos principais problemas enfrentados pelos povos indígenas. A Constituição garante o direito às terras que tradicionalmente ocupam, pois esses territórios são importantes não apenas para sua sobrevivência, mas também para a sua identidade. Entretanto, conflitos envolvendo invasões, exploração ilegal de recursos naturais e desmatamento ainda acontecem em diferentes regiões do país. Isso mostra que não basta ter os direitos escritos se, na prática, não são aplicados de forma coerente. Cabe à FUNAI fiscalizar para que essas garantias sejam cumpridas.",
+            "Além disso, o acesso à educação e à saúde também é essencial para a cidadania indígena. Os povos originários possuem diferentes línguas, costumes e formas de organização; por isso, os serviços públicos precisam estar aptos para atender a essas particularidades. Garantir escolas e atendimento de saúde de qualidade para essas comunidades é uma forma de diminuir as desigualdades e permitir que os nativos tenham melhores condições de exercer seus direitos. Sendo assim, o preconceito e a falta de conhecimento sobre essas populações também precisam ser combatidos.",
+            "Portanto, para que a cidadania indígena seja efetivada no Brasil, é necessário que os direitos garantidos sejam colocados em prática. Para isso, o Governo Federal, por meio da FUNAI, deve aumentar a fiscalização das terras e combater invasões e atividades ilegais nesses territórios. Além disso, as escolas devem promover o ensino sobre a história e a cultura dos povos originários, buscando diminuir o preconceito. Assim, será possível construir uma sociedade mais justa, na qual os povos nativos tenham todos os seus direitos respeitados."
+        ]
+    },
+    {
+        numero: 9,
+        titulo: "Algoritmos Digitais e a Padronização do Consumo",
+        conteudo: [
+            "Na sociedade contemporânea, a mídia está cada vez mais presente na forma como as pessoas consomem e enxergam o mundo. Com a popularização das redes sociais, os algoritmos passaram a selecionar conteúdos de acordo com os interesses de cada usuário. Dessa forma, referências culturais e produtos são apresentados de maneira personalizada, influenciando escolhas, comportamentos e até estilos de vida. Nesse contexto, evidenciam-se como problemas a manipulação do consumo e a padronização dos modos de vida.",
+            "Primeiramente, os algoritmos contribuem para estimular o consumo excessivo. Isso acontece porque, ao analisar pesquisas e curtidas, as plataformas conseguem identificar os interesses dos usuários e oferecer anúncios cada vez mais específicos. Assim, muitas vezes, o indivíduo é levado a desejar produtos que nem pretendia comprar. Além disso, a constante exposição a influenciadores e tendências cria a sensação de que é necessário acompanhar determinado padrão para fazer parte da sociedade.",
+            "Além disso, a personalização dos conteúdos pode limitar o contato com diferentes manifestações culturais. Como as plataformas possivelmente recomendam aquilo que já agrada ao usuário, ele pode permanecer preso a um mesmo tipo de conteúdo e ter menos contato com opiniões, costumes e formas de expressão diferentes. Com isso, a diversidade cultural pode ser enfraquecida, enquanto determinados padrões de comportamentos se tornam cada vez mais comuns.",
+            "Portanto, o Ministério da Cultura, em parceria com as plataformas digitais e escolas, deve promover campanhas de educação em relação às mídias e ao consumo consciente, por meio de palestras, conteúdos educativos e explicações sobre o funcionamento dos algoritmos, a fim de promover nos usuários maior senso crítico diante das recomendações digitais e valorizar a diversidade cultural. Dessa maneira, a população poderá utilizar as mídias de forma mais consciente, sem deixar que os algoritmos determinem seus hábitos de vida."
+        ]
+    },
+    {
+        numero: 10,
+        titulo: "Preservação dos Monumentos Históricos e Memória Nacional",
+        conteudo: [
+            "A partir da reflexão proposta pelo escritor brasileiro Machado de Assis, em O Espelho, é possível compreender que a preservação de elementos que representam uma sociedade contribui para a manutenção de sua identidade e memória coletiva. Nesse contexto, a preservação dos monumentos históricos no Brasil contemporâneo ainda enfrenta desafios que ameaçam a valorização da história nacional. Diante disso, a negligência do poder público e a ausência da educação da população são fatores que dificultam a conservação desses patrimônios.",
+            "Em primeiro lugar, a falta de investimentos governamentais representa um dos principais problemas para a preservação dos monumentos históricos. Isso ocorre porque muitos desses espaços não recebem os cuidados necessários, ficando sujeitos ao desgaste causado pelo tempo e pela ausência de manutenção. A consequência é que construções que carregam importantes acontecimentos da história brasileira acabam sendo danificadas ou até mesmo destruídas. Dessa forma, o esquecimento do Estado contribui para o apagamento de parte da memória cultural do país.",
+            "Além disso, a falta de conhecimento da população sobre a importância desses patrimônios também agrava o problema. Com base nisso, a ausência de uma educação focada na valorização da história faz com que muitos indivíduos não reconheçam os monumentos como parte de sua própria identidade. Isso pode ser observado em casos de vandalismo e abandono de espaços históricos, que demonstram a pouca valorização desses locais. Assim, quando a sociedade não compreende a importância de preservar seu passado, acaba sendo mais difícil garantir que ele passe às próximas gerações.",
+            "Portanto, é necessário enfrentar os desafios da preservação dos monumentos históricos no Brasil. Para isso, o Ministério da Cultura, em parceria com o IPHAN, deve investir na restauração e manutenção desses espaços, por meio de políticas públicas e fiscalização. Além disso, o Ministério da Educação, junto às escolas, deve promover projetos educativos e campanhas de conscientização, a fim de incentivar a valorização do patrimônio histórico. Dessa forma, será possível preservar a memória coletiva e garantir que as futuras gerações conheçam a história do país."
+        ]
+    },
+    {
+        numero: 11,
+        titulo: "Exploração Espacial e Responsabilidade Ambiental e Social",
+        conteudo: [
+            "O século XX ficou marcado pela chegada do ser humano à Lua; desde então, a exploração espacial vem sendo marcada por grandes avanços científicos e tecnológicos. O processo se intensificou com o desenvolvimento de novas tecnologias e a participação de empresas privadas. Entretanto, nesse caso, é importante destacar a necessidade de conciliar o processo científico com a responsabilidade social. Sendo assim, os impactos ambientais causados pela exploração espacial e a desigualdade no acesso aos benefícios desse avanço são fatores que dificultam esse acordo e precisam ser analisados.",
+            "Diante desse cenário, é necessário destacar os impactos ambientais relacionados à exploração espacial. Com o aumento do número de lançamentos de foguetes e de satélites, também cresce a quantidade de resíduos, formando o chamado lixo espacial. Esses materiais podem permanecer durante anos no espaço e aumentar o risco de colisões com outros equipamentos, prejudicando missões. Além disso, os lançamentos espaciais também podem gerar impactos na atmosfera. Dessa forma, percebe-se que o avanço científico, quando realizado sem planejamento e preocupação ambiental, pode trazer consequências negativas para o próprio planeta que busca ser explorado.",
+            "Além disso, a desigualdade no acesso aos benefícios da exploração espacial é um impasse para a responsabilidade social. Durante a Corrida Espacial, no século XX, Estados Unidos e União Soviética disputavam avanços tecnológicos como forma de demonstrar poder político e econômico. Atualmente, apesar de a exploração espacial ter novos objetivos e contar com a participação de empresas privadas, ainda existe uma concentração de investimentos de grupos econômicos mais desenvolvidos. Com isso, os benefícios produzidos por esse avanço científico podem não alcançar toda a população, enquanto problemas sociais básicos continuam presentes em diversas regiões do mundo. Portanto, é necessário garantir que o desenvolvimento espacial também contribua para o bem-estar coletivo.",
+            "Em vista disso, é fundamental que a exploração espacial do século XXI aconteça de maneira responsável e equilibrada. Para isso, a Organização das Nações Unidas (ONU), em parceria com os governos dos países envolvidos no setor espacial, deve estabelecer normas mais rígidas para o controle do lixo espacial e para a redução dos impactos ambientais causados pelos lançamentos, por meio de acordos internacionais e fiscalização das atividades realizadas. Além disso, os governos devem ampliar investimentos em pesquisas e tecnologias espaciais para benefícios sociais, como prevenção de desastres, garantindo que os resultados desse avanço não fiquem restritos às grandes potências e empresas. Assim, será possível conciliar o desenvolvimento científico com a responsabilidade social e garantir que a exploração do espaço contribua para a sociedade sem ignorar os problemas existentes na Terra."
+        ]
+    },
+    {
+        numero: 12,
+        titulo: "Preservação da Fauna Brasileira e Combate à Extinção",
+        conteudo: [
+            "Muito se discute sobre a importância da preservação da natureza para a manutenção da vida. Nesse sentido, o seringueiro e ativista brasileiro Chico Mendes destacou-se por sua luta em prol da Amazônia e da conservação ambiental. No entanto, apesar dessa preocupação, muitas espécies da fauna brasileira infelizmente enfrentam riscos de extinção. Dessa forma, a destruição dos habitats naturais e a escassez das medidas de proteção ecológicas dificultam a conservação da fauna.",
+            "Em primeiro lugar, a destruição dos habitats naturais é uma das principais causas do risco de extinção de diversas espécies brasileiras. Para ilustrar essa premissa, o filme Rio retrata a captura ilegal de aves silvestres e o tráfico de animais, mostrando como essas práticas ameaçam a sobrevivência da natureza. Nesse caso, a realidade brasileira se assemelha à animação, visto que o desmatamento e a exploração ilegal da fauna prejudicam o equilíbrio ambiental e reduzem as chances de conservação. Portanto, a destruição dos ambientes naturais representa um grande obstáculo para a preservação da biodiversidade brasileira.",
+            "Além disso, a escassez de medidas eficazes de proteção ambiental agrava o risco de extinção de diversas espécies da fauna brasileira. Sob essa ótica, a falta de fiscalização adequada e de investimentos em políticas de preservação permite a continuidade de práticas ilegais, como a caça predatória e o tráfico de animais silvestres. Infere-se, logo, que a ineficiência dessas medidas contribui para a redução das populações de animais e ameaça o equilíbrio dos ecossistemas. Desse modo, a ausência de ações governamentais efetivas dificulta a conservação da biodiversidade brasileira.",
+            "Nesse sentido, cabe ao ICMBio e ao IBAMA, em articulação com as Secretarias Estaduais e prefeituras municipais, fortalecer a fiscalização ambiental e ampliar os investimentos em políticas de proteção à fauna brasileira, por meio do aumento do número de fiscais ambientais, da realização de operações frequentes em áreas de risco e do uso de tecnologias como drones e imagens de satélite, a fim de combater crimes ambientais e reduzir o risco de extinção de diversas espécies. Dessa forma, será possível preservar a biodiversidade nacional e garantir o equilíbrio dos ecossistemas para as futuras gerações."
+        ]
+    },
+    {
+        numero: 13,
+        titulo: "Desafios da Migração, Xenofobia e Acolhimento Humano",
+        conteudo: [
+            "No livro Quarto de Despejo, de Carolina Maria de Jesus, são retratadas as dificuldades enfrentadas por pessoas marginalizadas, evidenciando a desigualdade e a luta por condições dignas de vida. Fora da literatura, essa realidade se relaciona aos desafios vividos por muitos migrantes, que deixam seus países em busca de segurança e melhores oportunidades. Nesse contexto, a xenofobia e a falta de políticas de acolhimento dificultam a integração desses indivíduos à sociedade.",
+            "Em primeiro lugar, a discriminação representa um dos principais obstáculos à convivência entre migrantes e a população local. A pensadora Hannah Arendt refletiu sobre a condição dos indivíduos privados de direitos e pertencimento, situação que pode ser relacionada à realidade de pessoas obrigadas a abandonar suas origens. Ao chegarem a outro país, muitos migrantes enfrentam preconceito por sua nacionalidade, cultura ou idioma, o que prejudica seu acesso ao emprego, à educação e à moradia. Dessa forma, a intolerância intensifica a exclusão social e dificulta a construção de uma convivência respeitosa.",
+            "Ademais, a ausência de medidas públicas eficazes compromete o acolhimento. A Declaração Universal dos Direitos Humanos estabelece que todos os seres humanos possuem direitos e devem ser tratados com dignidade, independentemente de suas diferenças. Entretanto, na prática, muitos migrantes encontram dificuldades para acessar serviços básicos e regularizar sua situação. Por isso, garantir direitos fundamentais e promover o respeito à diversidade são medidas essenciais para transformar a migração em uma experiência de integração, e não de marginalização.",
+            "Portanto, é necessário enfrentar os desafios da migração e do acolhimento. Para isso, o Governo Federal, em parceria com estados e municípios, deve ampliar as políticas de assistência aos migrantes, por meio da oferta de orientação jurídica, cursos de português e acesso aos serviços públicos. Diante disso, as escolas e os meios de comunicação devem promover campanhas contra a xenofobia, valorizando o respeito às diferentes culturas. Assim, será possível construir uma sociedade mais justa, na qual a origem de cada indivíduo não seja motivo de exclusão, mas parte da diversidade humana."
+        ]
+    },
+    {
+        numero: 14,
+        titulo: "Prevenção e Vulnerabilidade Social diante de Eventos Climáticos Extremos",
+        conteudo: [
+            "A partir do artigo 225 da Constituição Federal de 1988, que garante a todos o direito a um meio ambiente ecologicamente equilibrado e estabelece o dever de preservá-lo, é possível observar a importância da proteção ambiental para a sociedade. Nesse sentido, a questão dos desafios para a preparação da população diante de eventos extremos, intensificados pelo El Niño e pelas mudanças climáticas, representa um problema no Brasil. Diante desse cenário, percebe-se que a falta de planejamento governamental e a vulnerabilidade da população contribuem para a persistência dessa problemática.",
+            "Em primeiro plano, a ausência de medidas preventivas e de planejamento adequado dificulta o enfrentamento de desastres ambientais. Para ilustrar essa premissa, destacam-se as enchentes ocorridas no Rio Grande do Sul, em 2024, que provocaram grandes prejuízos materiais e sociais. Nesse contexto, a tragédia evidenciou a falta de infraestrutura e de preparação para lidar com eventos climáticos extremos, deixando milhares de pessoas em situação de vulnerabilidade. Portanto, a falta de prevenção na atuação do poder público agrava os impactos desses fenômenos.",
+            "Por outro lado, a vulnerabilidade social diante das mudanças climáticas também representa um obstáculo. Sob essa ótica, a seca histórica na Amazônia, em 2023, provocou a redução dos níveis dos rios, dificultando o transporte, o acesso à água e a sobrevivência de comunidades ribeirinhas. Infere-se, logo, que os fenômenos climáticos extremos afetam não apenas o meio ambiente, mas também a qualidade de vida da população, principalmente daqueles que possuem menos recursos para enfrentar essas situações. Desse modo, a falta de preparo amplia as desigualdades sociais e os prejuízos causados pelos desastres.",
+            "Portanto, é necessário enfrentar o problema, visto que a falta de planejamento governamental e a vulnerabilidade da população contribuem para sua manutenção. Para isso, cabe ao Governo Federal, em parceria com os governos estaduais e municipais, promover medidas de prevenção e enfrentamento dos eventos climáticos extremos. Isso ocorrerá por meio da ampliação de investimentos em infraestrutura, sistemas de alerta e ações de educação ambiental, mediante campanhas informativas e monitoramento das áreas de risco. O objetivo é preparar a sociedade para agir diante de situações de emergência e reduzir os danos causados pelos fenômenos climáticos. Além disso, os órgãos responsáveis pela Defesa Civil deverão intensificar o acompanhamento das regiões mais vulneráveis. Assim, será possível construir uma sociedade mais preparada, segura e consciente ambientalmente."
+        ]
+    },
+    {
+        numero: 15,
+        titulo: "Obsolescência Tecnológica e o Descarte Consciente de Resíduos Eletrônicos",
+        conteudo: [
+            "A partir da obra Quarto de Despejo, de Carolina Maria de Jesus, observa-se a realidade de pessoas que enfrentam a desigualdade social e a falta de condições dignas de vida. Nesse sentido, a obsolescência tecnológica e o descarte de resíduos eletrônicos representam desafios para a sustentabilidade no Brasil. Diante desse cenário, percebe-se que o consumo excessivo e a falta de conscientização ambiental contribuem para a persistência do problema.",
+            "Em primeiro plano, o consumo excessivo de produtos tecnológicos favorece o aumento do descarte de equipamentos eletrônicos. Para ilustrar essa premissa, a constante criação de novos modelos de celulares e computadores estimula a substituição de aparelhos que ainda poderiam ser utilizados. Nesse contexto, a busca por novidades fortalece a obsolescência dos produtos e aumenta a produção de lixo eletrônico. Portanto, o consumismo agrava essa problemática ambiental.",
+            "Por outro lado, a falta de conscientização sobre o descarte correto também dificulta a preservação ambiental. Sob essa ótica, Quarto de Despejo, de Carolina Maria de Jesus, evidencia como a desigualdade social expõe grupos à falta de saneamento. Infere-se, logo, que a ausência de orientação e de pontos de coleta amplia os riscos ambientais e sociais, principalmente nas comunidades vulneráveis. Desse modo, a falta de educação ambiental contribui para a manutenção do problema.",
+            "Portanto, é necessário enfrentar o problema, visto que o consumo excessivo e a falta de conscientização ambiental contribuem para sua manutenção. Para isso, cabe ao Governo Federal promover campanhas educativas e ampliar os pontos de coleta de resíduos eletrônicos, por meio de parcerias com empresas fabricantes, com o objetivo de incentivar o descarte correto. Além disso, as escolas devem orientar os estudantes sobre o consumo consciente. Assim, será possível reduzir os impactos ambientais e construir uma sociedade mais sustentável."
+        ]
+    }
 ];
 
-const cards = document.getElementById("cards");
-const modal = document.getElementById("modal");
-let atual = 0, ultimoFoco = null;
+// Inicialização do DOM
+document.addEventListener('DOMContentLoaded', () => {
+    const gridRedacoes = document.getElementById('grid-redacoes');
+    const modal = document.getElementById('modal-redacao');
+    const closeModal = document.querySelector('.close-modal');
+    const modalTitulo = document.getElementById('modal-titulo');
+    const modalCorpo = document.getElementById('modal-corpo');
 
-TEMAS.forEach((tema, i) => {
-  const b = document.createElement("button");
-  b.className = "card";
-  b.innerHTML = `<span class="n">Redação ${i + 1}</span><span class="t">${tema}</span><span class="p">Ler texto</span>`;
-  b.addEventListener("click", () => abrir(i));
-  cards.appendChild(b);
-});
+    // Renderizar os Cards das 15 Redações
+    redações.forEach(redacao => {
+        const card = document.createElement('div');
+        card.className = 'redacao-card';
+        card.innerHTML = `
+            <div>
+                <h4><i class="fa-solid fa-file-lines"></i> Redação ${redacao.numero}</h4>
+                <p><strong>${redacao.titulo}</strong></p>
+                <p>${redacao.conteudo[0].substring(0, 100)}...</p>
+            </div>
+            <button class="btn-read"><i class="fa-solid fa-eye"></i> Ler Texto Completo</button>
+        `;
 
-function abrir(i) {
-  ultimoFoco = document.activeElement;
-  atual = i;
-  mostrar();
-  modal.hidden = false;
-  document.body.style.overflow = "hidden";
-  document.getElementById("fechar").focus();
-}
+        // Evento de clique para abrir o Modal
+        card.addEventListener('click', () => {
+            modalTitulo.innerText = `Redação ${redacao.numero}: ${redacao.titulo}`;
+            modalCorpo.innerHTML = redacao.conteudo.map(p => `<p>${p}</p>`).join('');
+            modal.style.display = 'block';
+        });
 
-function mostrar() {
-  document.getElementById("modal-num").textContent = `Redação ${atual + 1} de ${TEMAS.length}`;
-  document.getElementById("modal-titulo").textContent = TEMAS[atual];
-  const box = document.getElementById("modal-texto");
-  box.innerHTML = "";
-  TEXTOS[atual + 1].forEach(par => {
-    const p = document.createElement("p");
-    p.textContent = par;
-    box.appendChild(p);
-  });
-  document.querySelector(".modal-box").scrollTop = 0;
-  document.getElementById("anterior").disabled = atual === 0;
-  document.getElementById("proxima").disabled = atual === TEMAS.length - 1;
-}
+        gridRedacoes.appendChild(card);
+    });
 
-function fechar() {
-  modal.hidden = true;
-  document.body.style.overflow = "";
-  if (ultimoFoco) ultimoFoco.focus();
-}
+    // Fechar Modal
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
 
-document.getElementById("fechar").addEventListener("click", fechar);
-document.getElementById("anterior").addEventListener("click", () => { atual--; mostrar(); });
-document.getElementById("proxima").addEventListener("click", () => { atual++; mostrar(); });
-modal.addEventListener("click", e => { if (e.target === modal) fechar(); });
-document.addEventListener("keydown", e => {
-  if (modal.hidden) return;
-  if (e.key === "Escape") fechar();
-  if (e.key === "ArrowLeft" && atual > 0) { atual--; mostrar(); }
-  if (e.key === "ArrowRight" && atual < TEMAS.length - 1) { atual++; mostrar(); }
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 });
