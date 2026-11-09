@@ -1,0 +1,140 @@
+/* Estilos do site "Minha trajetória escolar"
+   Layout: um álbum de recortes antigo — papel rosado envelhecido, polaroids presas com fita, linha do tempo em capítulos e cartas dobradas para as redações. Tema único (papel), cores todas explícitas. */
+:root{
+  --paper:#f2ddd6;
+  --paper-2:#f8ebe5;
+  --rose:#c9798a;
+  --rose-deep:#8f4357;
+  --ink:#4a2f33;
+  --ink-soft:#7a5a5c;
+  --tape:rgba(232,178,190,.72);
+  --line:rgba(143,67,87,.22);
+  --f-display:"DM Serif Display",Georgia,serif;
+  --f-body:"Lora",Georgia,"Times New Roman",serif;
+  --f-hand:"Caveat","Comic Sans MS",cursive;
+  --f-type:"Special Elite","Courier New",monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{
+  background-color:var(--paper);
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:17px;line-height:1.7;
+  background-image:
+    radial-gradient(ellipse at 15% 10%,rgba(255,255,255,.45),transparent 55%),
+    radial-gradient(ellipse at 85% 90%,rgba(160,90,90,.14),transparent 60%),
+    url("../assets/img/gatinhos.svg"),
+    url("../assets/img/textura-papel.svg");
+  background-attachment:fixed,fixed,scroll,scroll;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;text-wrap:balance;color:var(--rose-deep);margin:0}
+.label{font-family:var(--f-type);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.hand{font-family:var(--f-hand)}
+p{margin:0}
+
+/* polaroid */
+.polaroid{position:relative;background:#fbf6f1;padding:12px 12px 52px;box-shadow:0 2px 3px rgba(74,47,51,.18),0 14px 30px rgba(74,47,51,.16);max-width:100%}
+.polaroid img{display:block;width:100%;filter:sepia(.35) saturate(.85) contrast(.95) brightness(1.03)}
+.polaroid figcaption{position:absolute;left:12px;right:12px;bottom:10px;text-align:center;font-family:var(--f-hand);font-size:24px;color:var(--ink);line-height:1.1}
+.polaroid::before{content:"";position:absolute;top:-14px;left:50%;width:110px;height:30px;transform:translateX(-50%) rotate(-3deg);background:var(--tape);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center;padding-block:72px 56px}
+.hero h1{font-size:clamp(44px,7vw,82px);line-height:.98;margin-top:14px}
+.hero h1 em{font-style:italic;color:var(--rose)}
+.hero .who{font-family:var(--f-hand);font-size:32px;color:var(--ink);margin-top:18px}
+.hero .intro{max-width:44ch;margin-top:18px;color:var(--ink-soft)}
+.hero-photo{position:relative;justify-self:center;width:min(360px,100%);transform:rotate(3deg)}
+.stamp{position:absolute;right:-22px;bottom:30px;width:104px;height:104px;border-radius:50%;
+  background:var(--rose-deep);color:var(--paper-2);display:grid;place-items:center;text-align:center;
+  font-family:var(--f-display);font-size:42px;line-height:1;transform:rotate(-14deg);
+  box-shadow:0 0 0 4px var(--paper-2),0 0 0 6px var(--rose-deep),0 8px 18px rgba(74,47,51,.25);cursor:pointer;border:none}
+.stamp small{display:block;font-family:var(--f-type);font-size:9px;letter-spacing:.12em;margin-top:4px}
+.stamp:hover,.stamp:focus-visible{animation:seven .7s ease-in-out 2}
+.stamp:focus-visible{outline:3px dashed var(--rose);outline-offset:6px}
+@keyframes seven{0%,100%{transform:rotate(-14deg) translateY(0)}25%{transform:rotate(-24deg) translateY(-6px)}75%{transform:rotate(-4deg) translateY(-6px)}}
+
+/* sections */
+section{padding-block:56px}
+.sec-head{display:flex;flex-direction:column;gap:6px;margin-bottom:36px}
+.sec-head h2{font-size:clamp(34px,5vw,52px);line-height:1.05}
+.sec-head p{color:var(--ink-soft);max-width:60ch}
+.divider{display:flex;align-items:center;gap:14px;color:var(--rose);font-family:var(--f-hand);font-size:22px}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--rose) 0 6px,transparent 6px 12px)}
+
+/* timeline */
+.timeline{position:relative;display:flex;flex-direction:column;gap:40px;padding-left:44px}
+.timeline::before{content:"";position:absolute;left:14px;top:8px;bottom:8px;width:2px;background:repeating-linear-gradient(var(--rose) 0 8px,transparent 8px 14px)}
+.chap{position:relative;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:start}
+.chap::before{content:"";position:absolute;left:-38px;top:10px;width:18px;height:18px;border-radius:50%;background:var(--paper-2);border:3px solid var(--rose-deep)}
+.chap .card{background:var(--paper-2);padding:26px 28px;box-shadow:0 1px 2px rgba(74,47,51,.12),0 10px 24px rgba(74,47,51,.08);min-width:0;
+  background-image:repeating-linear-gradient(transparent 0 33px,var(--line) 33px 34px);background-position:0 18px}
+.chap h3{font-size:30px;margin:4px 0 12px}
+.chap p{max-width:62ch}
+.chap .note{margin-top:14px;font-family:var(--f-hand);font-size:23px;color:var(--rose-deep)}
+.chap .polaroid{width:230px;transform:rotate(-4deg);margin-top:8px}
+.chap .polaroid figcaption{font-size:20px}
+
+/* redações */
+.essays{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.essay{background:var(--paper-2);box-shadow:0 1px 2px rgba(74,47,51,.12),0 8px 20px rgba(74,47,51,.08);position:relative;min-width:0}
+.essay:nth-child(3n+1){transform:rotate(-.6deg)}
+.essay:nth-child(3n+2){transform:rotate(.5deg)}
+.essay[open]{grid-column:1/-1;transform:none}
+.essay summary{list-style:none;cursor:pointer;padding:22px 22px 20px;display:flex;flex-direction:column;gap:8px}
+.essay:not([open]) summary{min-height:100%}
+.essay[open] .body{position:relative;z-index:1}
+.essay summary::-webkit-details-marker{display:none}
+.essay summary:focus-visible{outline:3px dashed var(--rose);outline-offset:4px}
+.essay .num{font-family:var(--f-type);font-size:13px;letter-spacing:.08em;color:var(--rose-deep)}
+.essay h3{font-size:23px;line-height:1.2;color:var(--ink)}
+.essay .open{margin-top:auto;padding-top:8px;font-family:var(--f-hand);font-size:21px;color:var(--rose-deep)}
+.essay[open] .open::after{content:" (fechar)"}
+.essay .body{padding:6px 28px 32px;max-width:72ch;display:flex;flex-direction:column;gap:14px}
+.essay .body p{text-indent:2em;text-align:justify;hyphens:auto}
+.essay::after{content:"";position:absolute;top:0;right:0;width:26px;height:26px;background:linear-gradient(225deg,var(--paper) 50%,rgba(143,67,87,.18) 50%)}
+.essay-tools{display:flex;justify-content:flex-end;margin-bottom:14px}
+.essay-tools button{font-family:var(--f-type);font-size:13px;letter-spacing:.06em;background:transparent;border:1px dashed var(--rose-deep);color:var(--rose-deep);padding:8px 14px;cursor:pointer}
+.essay-tools button:hover{background:var(--paper-2)}
+
+/* futuro */
+.future{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.future .ticket{background:var(--rose-deep);color:var(--paper-2);padding:34px 32px;transform:rotate(-1.5deg);position:relative;
+  -webkit-mask:radial-gradient(circle 12px at 0 50%,transparent 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 12px at 100% 50%,transparent 98%,#000) right/51% 100% no-repeat;
+  mask:radial-gradient(circle 12px at 0 50%,transparent 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 12px at 100% 50%,transparent 98%,#000) right/51% 100% no-repeat}
+.ticket .label{color:#f2c9d1}
+.ticket h3{color:var(--paper-2);font-size:44px;margin-top:6px}
+.ticket p{margin-top:8px;color:#f6dfe3}
+.future .text{display:flex;flex-direction:column;gap:14px}
+
+footer{padding-block:40px 64px;text-align:center;color:var(--ink-soft)}
+footer .hand{font-size:30px;color:var(--rose-deep)}
+footer .label{margin-top:8px}
+
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr;padding-block:44px 32px;gap:40px}
+  .essays{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .future{grid-template-columns:1fr}
+  .chap{grid-template-columns:1fr}
+  .chap .polaroid{justify-self:center}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .essays{grid-template-columns:1fr}
+  .essay,.essay:nth-child(n){transform:none}
+  .timeline{padding-left:30px}
+  .timeline::before{left:7px}
+  .chap::before{left:-30px}
+  .chap .card{padding:20px}
+  .essay .body{padding:4px 20px 26px}
+  .essay .body p{text-align:left}
+  .stamp{right:-8px;width:88px;height:88px;font-size:36px}
+}
+@media (prefers-reduced-motion:reduce){.stamp:hover,.stamp:focus-visible{animation:none}}
+
+body{margin:0}
+img{max-width:100%}
